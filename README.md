@@ -34,11 +34,11 @@ Initializes the SCSSDK with base parameters for the mobile app using the SDK and
 The Score function is used to collect alternative data from a consumer’s mobile device and retrieve a credit risk score based on that metadata.  The Score function verifies that the user has provided the necessary consent to the required permissions.  These permissions include permission (1) to read contacts, (2) to read calendar, and (3) to read photos and media.  If the correct permissions have not been granted, the score function will terminate.  The Score function then collects the necessary metadata, interacts with the SCS platform, and returns a score and probability of default.
 ### Parameters:
 -	Application Context: The current mobile application’s context to enable permission checks and metadata gathering.
--	At least one of the following unique identifiers:
-o	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-o	Email address:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-o	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-o	User Id:  User ID returned after calling “Register User”
+-	At least one of the following unique identifiers -- Email is preferred:
+1.	Email address:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+2.	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+3.	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+4.	User Id:  User ID returned after calling “Register User”
 -	
 ### Returns:
 Score JSON including the following fields:
