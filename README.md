@@ -35,10 +35,10 @@ The Score function is used to collect alternative data from a consumer’s mobil
 ### Parameters:
 -	Application Context: The current mobile application’s context to enable permission checks and metadata gathering.
 -	At least one of the following unique identifiers -- Email is preferred:
-1.	Email address:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-2.	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-3.	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
-4.	User Id:  User ID returned after calling “Register User”
+   1.	Email address:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+   2.	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+   3.	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
+   4.	User Id:  User ID returned after calling “Register User”
 
 ### Returns:
 Score JSON including the following fields:
@@ -55,15 +55,15 @@ Function used to log in an existing user.  Returns a User object that includes d
 -	Authenticated:  Boolean value indicating whether the user has been logged in
 -	Token:  JWT token that is required for all other SDK calls
 -	User Object:
-  - UserId:  a unique integer assigned to this user.
-  - firstname: a string with the user’s first name.
-  - lastname: a string with the user’s last name.
-  - email: a string with the user’s email address, e.g. user@example.com,
-  - city: an optional string with the user’s city.
-  - country: an optional string with the user’s country.
-  - phone: a string containing the user’s mobile phone number.
-  - postalcode: a string containing the user’s postal code.
-  - password: a string containing a one-way hash of the user’s password.
+   - UserId:  a unique integer assigned to this user.
+   - firstname: a string with the user’s first name.
+   - lastname: a string with the user’s last name.
+   - email: a string with the user’s email address, e.g. user@example.com,
+   - city: an optional string with the user’s city.
+   - country: an optional string with the user’s country.
+   - phone: a string containing the user’s mobile phone number.
+   - postalcode: a string containing the user’s postal code.
+   - password: a string containing a one-way hash of the user’s password.
 
 ## GetConsents
 Used to retrieve a list of all consents – granted or denied – provided by a user.
@@ -74,14 +74,14 @@ Used to retrieve a list of all consents – granted or denied – provided by a 
 Array of Consents:
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-  - 0 = location 
-  - 1 = SMS logs 
-  - 2 = Phone logs
-  - 3 = Phone Info
-  - 4 = Installed Apps
-  - 5 = Contacts
-  - 6 = Data Usage
-  - 7 = App Usage
+   - 0 = location 
+   - 1 = SMS logs 
+   - 2 = Phone logs
+   - 3 = Phone Info
+   - 4 = Installed Apps
+   - 5 = Contacts
+   - 6 = Data Usage
+   - 7 = App Usage
 -	granted: The date and time at which the consent was granted.  Null if permission is denied.
 -	denied: The date and time at which the consent was denied.  Null if permission is granted.
 ## GetOfferData
@@ -99,44 +99,44 @@ Retrieves the data saved for this user
 -	EndDate:  End date for time interval for which data will be returned.
 ### Returns:
 -	Array of UserData:
-o	userid:  Integer user ID from the User object returned at login or registration.
-o	Data:  JSON string of data stored for user
+   - userid:  Integer user ID from the User object returned at login or registration.
+   - Data:  JSON string of data stored for user
 ## RegisterUser
 Function used to register a new user to the system.  
 ### Parameters:
 -	User Object:
-o	firstname: a string with the user’s first name.
-o	lastname: a string with the user’s last name.
-o	email: a string with the user’s email address, e.g. user@example.com,
-o	city: an optional string with the user’s city.
-o	country: an optional string with the user’s country.
-o	phone: a string containing the user’s mobile phone number.
-o	postalcode: a string containing the user’s postal code.
-o	password: a string containing the user’s password.
+   - firstname: a string with the user’s first name.
+   - lastname: a string with the user’s last name.
+   - email: a string with the user’s email address, e.g. user@example.com,
+   - city: an optional string with the user’s city.
+   - country: an optional string with the user’s country.
+   - phone: a string containing the user’s mobile phone number.
+   - postalcode: a string containing the user’s postal code.
+   - password: a string containing the user’s password.
 ### Returns:
 -	User Object:
-o	Userid:  a unique integer assigned to this user.
-o	firstname: a string with the user’s first name.
-o	lastname: a string with the user’s last name.
-o	email: a string with the user’s email address, e.g. user@example.com,
-o	city: an optional string with the user’s city.
-o	country: an optional string with the user’s country.
-o	phone: a string containing the user’s mobile phone number.
-o	postalcode: a string containing the user’s postal code.
-o	password: the user’s chosen password.
+   - Userid:  a unique integer assigned to this user.
+   - firstname: a string with the user’s first name.
+   - lastname: a string with the user’s last name.
+   - email: a string with the user’s email address, e.g. user@example.com,
+   - city: an optional string with the user’s city.
+   - country: an optional string with the user’s country.
+   - phone: a string containing the user’s mobile phone number.
+   - postalcode: a string containing the user’s postal code.
+   - password: the user’s chosen password.
 ## SaveConsent
 Used to save a specific consent for a particular user.  
 ### Parameters:
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-o	0 = location 
-o	1 = SMS logs 
-o	2 = Phone logs
-o	3 = Phone Info
-o	4 = Installed Apps
-o	5 = Contacts
-o	6 = Data Usage
-o	7 = App Usage
+   - 0 = location 
+   - 1 = SMS logs 
+   - 2 = Phone logs
+   - 3 = Phone Info
+   - 4 = Installed Apps
+   - 5 = Contacts
+   - 6 = Data Usage
+   - 7 = App Usage
 -	granted: The date and time at which the consent was granted.  Set to null if permission is denied.
 -	denied: The date and time at which the consent was denied.  Set to null if permission is granted.
 -	Token:  JWT token returned from Login
@@ -145,14 +145,14 @@ o	7 = App Usage
 -	consentid:  Unique ID of a particular consent.
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-o	0 = location 
-o	1 = SMS logs 
-o	2 = Phone logs
-o	3 = Phone Info
-o	4 = Installed Apps
-o	5 = Contacts
-o	6 = Data Usage
-o	7 = App Usage
+   - 0 = location 
+   - 1 = SMS logs 
+   - 2 = Phone logs
+   - 3 = Phone Info
+   - 4 = Installed Apps
+   - 5 = Contacts
+   - 6 = Data Usage
+   - 7 = App Usage
 -	granted: The date and time at which the consent was granted.  Set to null if permission is denied.
 -	denied: The date and time at which the consent was denied.  Set to null if permission is granted.
 ## SaveData
@@ -169,26 +169,26 @@ Verifies that an existing consent is still valid.
 ### Parameters
 -	Consent ID:  Unique ID of a particular consent.
 -	UserID: Integer user ID from the User object returned at login or registration.
--	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-o	0 = location 
-o	1 = SMS logs 
-o	2 = Phone logs
-o	3 = Phone Info
-o	4 = Installed Apps
-o	5 = Contacts
-o	6 = Data Usage
-o	7 = App Usage
+-	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:   
+   - 0 = location 
+   - 1 = SMS logs 
+   - 2 = Phone logs
+   - 3 = Phone Info
+   - 4 = Installed Apps
+   - 5 = Contacts
+   - 6 = Data Usage
+   - 7 = App Usage
 ### Returns
 -	consentid:  unique ID of a particular consent.
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-o	0 = location 
-o	1 = SMS logs 
-o	2 = Phone logs
-o	3 = Phone Info
-o	4 = Installed Apps
-o	5 = Contacts
-o	6 = Data Usage
-o	7 = App Usage
+   - 0 = location 
+   - 1 = SMS logs 
+   - 2 = Phone logs
+   - 3 = Phone Info
+   - 4 = Installed Apps
+   - 5 = Contacts
+   - 6 = Data Usage
+   - 7 = App Usage
 -	granted: The date and time at which the consent was granted.  Set to null if permission is denied.
 -	denied: The date and time at which the consent was denied.  Set to null if permission is granted.
