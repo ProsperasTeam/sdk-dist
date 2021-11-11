@@ -25,7 +25,7 @@ ActivityCompat.requestPermissions(this@MainActivity, permission, requestCode)
 //collect the user’s email address as a unique identifier for the user
 val email = “test2002@test.com”
 //retrieve the authorization key from settings or wherever you securely store it
-val authKey = "ed7482b8-22ce-45c4-b49c-f8e42321ea7a"
+val authKey = PROVIDED_BY_SCS
 //initialize the SCSSDK
 var scs = SCSSDK(authKey)
 //call the score function passing 
