@@ -39,7 +39,7 @@ The Score function is used to collect alternative data from a consumer’s mobil
 2.	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
 3.	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
 4.	User Id:  User ID returned after calling “Register User”
--	
+
 ### Returns:
 Score JSON including the following fields:
 -	ReferenceID (integer):  The unique reference ID for this scoring collection.
@@ -55,15 +55,15 @@ Function used to log in an existing user.  Returns a User object that includes d
 -	Authenticated:  Boolean value indicating whether the user has been logged in
 -	Token:  JWT token that is required for all other SDK calls
 -	User Object:
-o	UserId:  a unique integer assigned to this user.
-o	firstname: a string with the user’s first name.
-o	lastname: a string with the user’s last name.
-o	email: a string with the user’s email address, e.g. user@example.com,
-o	city: an optional string with the user’s city.
-o	country: an optional string with the user’s country.
-o	phone: a string containing the user’s mobile phone number.
-o	postalcode: a string containing the user’s postal code.
-o	password: a string containing a one-way hash of the user’s password.
+  - UserId:  a unique integer assigned to this user.
+  - firstname: a string with the user’s first name.
+  - lastname: a string with the user’s last name.
+  - email: a string with the user’s email address, e.g. user@example.com,
+  - city: an optional string with the user’s city.
+  - country: an optional string with the user’s country.
+  - phone: a string containing the user’s mobile phone number.
+  - postalcode: a string containing the user’s postal code.
+  - password: a string containing a one-way hash of the user’s password.
 
 ## GetConsents
 Used to retrieve a list of all consents – granted or denied – provided by a user.
@@ -71,19 +71,19 @@ Used to retrieve a list of all consents – granted or denied – provided by a 
 -	Userid:  Integer user ID from the User object returned at login or registration.
 -	Token:  JWT token returned from Login
 ### Returns:  
--	Array of Consents:
-o	userid:  Integer user ID from the User object returned at login or registration.
-o	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
-	0 = location 
-	1 = SMS logs 
-	2 = Phone logs
-	3 = Phone Info
-	4 = Installed Apps
-	5 = Contacts
-	6 = Data Usage
-	7 = App Usage
-o	granted: The date and time at which the consent was granted.  Null if permission is denied.
-o	denied: The date and time at which the consent was denied.  Null if permission is granted.
+Array of Consents:
+-	userid:  Integer user ID from the User object returned at login or registration.
+-	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
+  - 0 = location 
+  - 1 = SMS logs 
+  - 2 = Phone logs
+  - 3 = Phone Info
+  - 4 = Installed Apps
+  - 5 = Contacts
+  - 6 = Data Usage
+  - 7 = App Usage
+-	granted: The date and time at which the consent was granted.  Null if permission is denied.
+-	denied: The date and time at which the consent was denied.  Null if permission is granted.
 ## GetOfferData
 Function to get the data related to the offer campaign to which the user is responding.  The function takes an Offer code, which is a unique string associated with the campaign, and returns the particular campaign’s initiation data.  
 ### Parameters:
