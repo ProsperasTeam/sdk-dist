@@ -24,15 +24,15 @@ The SCS SDK requires the following Android permissions:
 •	android.permission.QUERY_ALL_PACKAGES
 ## SCSSDK
 Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
-###Parameters:
+### Parameters:
 -	Authorization Key: Unique key provided to your organization to allow you to access the SCS Platform.
 -	API URL:  Optional URL string specifying the location of the SCS API.
-###Returns:
+### Returns:
 -	Initialized SCSSDK object.
-#Metadata Scoring Integration
-##Score
+# Metadata Scoring Integration
+## Score
 The Score function is used to collect alternative data from a consumer’s mobile device and retrieve a credit risk score based on that metadata.  The Score function verifies that the user has provided the necessary consent to the required permissions.  These permissions include permission (1) to read contacts, (2) to read calendar, and (3) to read photos and media.  If the correct permissions have not been granted, the score function will terminate.  The Score function then collects the necessary metadata, interacts with the SCS platform, and returns a score and probability of default.
-###Parameters:
+### Parameters:
 -	Application Context: The current mobile application’s context to enable permission checks and metadata gathering.
 -	At least one of the following unique identifiers:
 o	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
@@ -40,17 +40,17 @@ o	Email address:  an optional parameter used to uniquely identify the device and
 o	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
 o	User Id:  User ID returned after calling “Register User”
 -	
-Returns:
+### Returns:
 -	ReferenceID (integer):  The unique reference ID for this scoring collection.
 -	Score (integer):  Relative risk score for the metadata collected on the particular device.  E.g., 602.
 -	Probability (decimal):  Decimal representing the relative probability that this user will default.  Expressed with 4 decimal places.  For example, 0.0532 reflects a relative 5.32% chance that the consumer will default.
-Full Integration 
-Login
+# Full Integration 
+## Login
 Function used to log in an existing user.  Returns a User object that includes details about the user that were provided during registration.
-Parameters:
+### Parameters:
 -	Email
 -	Password
-Returns:
+### Returns:
 -	Authenticated:  Boolean value indicating whether the user has been logged in
 -	Token:  JWT token that is required for all other SDK calls
 -	User Object:
@@ -64,12 +64,12 @@ o	phone: a string containing the user’s mobile phone number.
 o	postalcode: a string containing the user’s postal code.
 o	password: a string containing a one-way hash of the user’s password.
 
-GetConsents
+## GetConsents
 Used to retrieve a list of all consents – granted or denied – provided by a user.
-Parameters:
+### Parameters:
 -	Userid:  Integer user ID from the User object returned at login or registration.
 -	Token:  JWT token returned from Login
-Returns:  
+### Returns:  
 -	Array of Consents:
 o	userid:  Integer user ID from the User object returned at login or registration.
 o	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
@@ -83,26 +83,26 @@ o	consenttype: integer/enum representing the type of consent granted or denied. 
 	7 = App Usage
 o	granted: The date and time at which the consent was granted.  Null if permission is denied.
 o	denied: The date and time at which the consent was denied.  Null if permission is granted.
-GetOfferData
+## GetOfferData
 Function to get the data related to the offer campaign to which the user is responding.  The function takes an Offer code, which is a unique string associated with the campaign, and returns the particular campaign’s initiation data.  
-Parameters:
+### Parameters:
 -	OfferCode: a string associated with the offer campaign to which the user is responding.
 -	Token:  JWT token returned from Login
-Returns:
+### Returns:
 -	Initdata:  Initiation data specific to the offer campaign.
-GetUserData
+## GetUserData
 Retrieves the data saved for this user
-Parameters:
+### Parameters:
 -	UserId:  Integer user ID from the User object returned at login or registration.
 -	StartDate:  Start date for time interval for which data will be returned.
 -	EndDate:  End date for time interval for which data will be returned.
-Returns:
+### Returns:
 -	Array of UserData:
 o	userid:  Integer user ID from the User object returned at login or registration.
 o	Data:  JSON string of data stored for user
-RegisterUser
+## RegisterUser
 Function used to register a new user to the system.  
-Parameters:
+### Parameters:
 -	User Object:
 o	firstname: a string with the user’s first name.
 o	lastname: a string with the user’s last name.
@@ -112,7 +112,7 @@ o	country: an optional string with the user’s country.
 o	phone: a string containing the user’s mobile phone number.
 o	postalcode: a string containing the user’s postal code.
 o	password: a string containing the user’s password.
-Returns:
+### Returns:
 -	User Object:
 o	Userid:  a unique integer assigned to this user.
 o	firstname: a string with the user’s first name.
@@ -123,9 +123,9 @@ o	country: an optional string with the user’s country.
 o	phone: a string containing the user’s mobile phone number.
 o	postalcode: a string containing the user’s postal code.
 o	password: the user’s chosen password.
-SaveConsent
+## SaveConsent
 Used to save a specific consent for a particular user.  
-Parameters:
+### Parameters:
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
 o	0 = location 
@@ -140,7 +140,7 @@ o	7 = App Usage
 -	denied: The date and time at which the consent was denied.  Set to null if permission is granted.
 -	Token:  JWT token returned from Login
 
-Returns:
+### Returns:
 -	consentid:  Unique ID of a particular consent.
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
@@ -154,18 +154,18 @@ o	6 = Data Usage
 o	7 = App Usage
 -	granted: The date and time at which the consent was granted.  Set to null if permission is denied.
 -	denied: The date and time at which the consent was denied.  Set to null if permission is granted.
-SaveData
+## SaveData
 Submit any data specific to a user in JSON format.
-Parameters
+### Parameters
 -	UserId:  Integer user ID from the User object returned at login or registration.
 -	Data:  JSON string of user data
-Returns
+### Returns
 -	Success:  Boolean whether data was saved correctly, true if success, false if not.
 -	DataId:  Integer uniquely identifying data saved.
 
-VerifyConsent
+## VerifyConsent
 Verifies that an existing consent is still valid.
-Parameters
+### Parameters
 -	Consent ID:  Unique ID of a particular consent.
 -	UserID: Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
@@ -177,7 +177,7 @@ o	4 = Installed Apps
 o	5 = Contacts
 o	6 = Data Usage
 o	7 = App Usage
-Returns
+### Returns
 -	consentid:  unique ID of a particular consent.
 -	userid:  Integer user ID from the User object returned at login or registration.
 -	consenttype: integer/enum representing the type of consent granted or denied.  Enum values are:
