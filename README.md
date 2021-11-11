@@ -41,6 +41,7 @@ o	Offer code:  an optional parameter used to uniquely identify the device and as
 o	User Id:  User ID returned after calling “Register User”
 -	
 ### Returns:
+Score JSON including the following fields:
 -	ReferenceID (integer):  The unique reference ID for this scoring collection.
 -	Score (integer):  Relative risk score for the metadata collected on the particular device.  E.g., 602.
 -	Probability (decimal):  Decimal representing the relative probability that this user will default.  Expressed with 4 decimal places.  For example, 0.0532 reflects a relative 5.32% chance that the consumer will default.
