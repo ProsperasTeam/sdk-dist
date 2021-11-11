@@ -1,17 +1,17 @@
 
  
-#Introduction
+# Introduction
 The following document provides general documentation applicable across all programming languages in which the SCS SDK is made available.  
-#Application flow
+# Application flow
 SCS offers two application flows, depending on the integration choice.  The first is score only and requires the least integration points.  The second is full integration, which allows access to all of the features available on the SCS platform.  
 In either flow, the SDK must first be initialized by passing certain parameters, including the organization’s authorization key and optionally, the phone number associated with the device.  The authorization key is obtained through SCS and authorizes the organization’s use of the SDK.  If the mobile app collects the user’s mobile phone number and it is provided to the SCS SDK, it can be used to identify the collected data and score and to assist in fraud prevention.  If the mobile phone number is unavailable, pass an empty string.
-#Score Only
+# Score Only
 The score-only integration allows the SDK to collect metadata from the host mobile phone and return a score using SCS’s proprietary technology.  Implementation requires only a call to the Score function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
-#Full Integration
+# Full Integration
 The Full Integration opens access to the full suite of features available on the SCS Platform.  Full Integration requires that each consumer be registered as a User using the RegisterUser function.  After registration, each User can log in with their email address and password.  If login is successful, the SDK will receive a token that will automatically be sent with all subsequent calls.  
 After being logged in, a list of previously saved saved consents – if any -- can be retrieved for that User. The SDK can also save new consents for each User that each represent a date and time a particular type of consent was granted or denied.  
 To collect the User’s data for assessment by the SCS platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
-#Requirements
+# Requirements
 The SCS SDK requires the following Android permissions:
 •	android.permission.INTERNET
 •	android.permission.READ_EXTERNAL_STORAGE
@@ -22,7 +22,7 @@ The SCS SDK requires the following Android permissions:
 •	android.permission.ACCESS_WIFI_STATE
 •	android.permission.USE_FINGERPRINT
 •	android.permission.QUERY_ALL_PACKAGES
-##SCSSDK
+## SCSSDK
 Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
 ###Parameters:
 -	Authorization Key: Unique key provided to your organization to allow you to access the SCS Platform.
