@@ -13,15 +13,15 @@ After being logged in, a list of previously saved saved consents – if any -- c
 To collect the User’s data for assessment by the SCS platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
 # Requirements
 The SCS SDK requires the following Android permissions:
-•	android.permission.INTERNET
-•	android.permission.READ_EXTERNAL_STORAGE
-•	android.permission.READ_CONTACTS
-•	android.permission.READ_CALENDAR
-•	android.permission.GET_ACCOUNTS
-•	android.permission.BLUETOOTH
-•	android.permission.ACCESS_WIFI_STATE
-•	android.permission.USE_FINGERPRINT
-•	android.permission.QUERY_ALL_PACKAGES
+-	android.permission.INTERNET
+-	android.permission.READ_EXTERNAL_STORAGE
+-	android.permission.READ_CONTACTS
+-	android.permission.READ_CALENDAR
+-	android.permission.GET_ACCOUNTS
+-	android.permission.BLUETOOTH
+-	android.permission.ACCESS_WIFI_STATE
+-	android.permission.USE_FINGERPRINT
+-	android.permission.QUERY_ALL_PACKAGES
 ## SCSSDK
 Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
 ### Parameters:
