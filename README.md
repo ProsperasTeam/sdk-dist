@@ -39,6 +39,7 @@ The Score function is used to collect alternative data from a consumer’s mobil
    2.	Mobile number:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
    3.	Offer code:  an optional parameter used to uniquely identify the device and assist in fraud detection.  If not collected, provide an empty string.
    4.	User Id:  User ID returned after calling “Register User”
+ - minCollect: Minimize data collected.  Defaults to False to ensure necessary data is collected.  Set to True for debugging purposes.
 
 ### Returns:
 Score JSON including the following fields:
