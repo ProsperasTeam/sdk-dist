@@ -1,0 +1,11 @@
+framework module SCSSDKiOS {
+  umbrella header "SCSSDKiOS.h"
+
+  export *
+  module * { export * }
+}
+
+module SCSSDKiOS.Swift {
+    header "SCSSDKiOS-Swift.h"
+    requires objc
+}
