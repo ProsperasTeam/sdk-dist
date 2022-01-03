@@ -22,6 +22,44 @@ The SCS SDK requires the following Android permissions:
 -	android.permission.ACCESS_WIFI_STATE
 -	android.permission.USE_FINGERPRINT
 -	android.permission.QUERY_ALL_PACKAGES
+# Include the Library
+
+## React Native
+Copy the latest scssdk.aar and scorelib.aar into the following directory, where "react-native-module-name" is the name of your module:  
+```
+react-native-module-name/android/libs
+```
+In your react-native-module-name/android/build.gradle add the following to your dependencies collection:
+```
+dependencies {
+  implementation fileTree(dir: "libs", include: ["*.aar"])
+}
+```
+
+## Xamarin
+1. Add a new Java Bindings Library project to your existing project or create a new one.
+2. Add the latest scssdk.aar and scorelib.aar into the Jars folder in your new project.
+3. View the properties for each .aar file and set the Build Action to LibraryProjectZip
+4. Build the Java Bindings Library
+5. Add a reference to your Java Bindings Library from your existing App project using the "Add Reference" context menu.
+6. Add an import statement at the top of the code in your App where you want to invoke the SCS SDK: `using Com.Scs.Scssdk;`
+7. Add the following code setting the variables to your values:
+
+```
+//set the authKey to the authorization key provided by SCS.  scsApiURL can be left as an empty string, ""
+SCSSDK scssdk = new SCSSDK(authKey, scsApiURL);
+//pass the application context, useremail, offercode, phonenumber, and minimum collect flag.
+//phonenumber can be passed as an empty string.  The minimum collect flag should be set to false.
+Object scoreRes = scssdk.Score(this, userEmail, offerCode, phonenumber, false);
+dynamic scoreObject = JsonConvert.DeserializeObject(scoreRes.ToString());
+//access the score results through the scoreObject
+referenceNumber = scoreObject.reference;
+int prequalthreshold = scoreObject.prequalthreshold;
+int declinethreshold = scoreObject.declinethreshold;
+int scorevalue = scoreObject.scorevalue;
+int uid = scoreObject.userid;
+```
+
 ## SCSSDK
 Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
 ### Parameters:
