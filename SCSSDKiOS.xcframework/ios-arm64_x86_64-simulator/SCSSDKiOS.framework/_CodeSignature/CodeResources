@@ -6,7 +6,7 @@
 	<dict>
 		<key>Frameworks/CredoAppCalendarEvents.framework/CredoAppCalendarEvents</key>
 		<data>
-		ExmYna2OFt9BHIvKNbzBaBz1eoI=
+		LxWyki8kd5Ci9klblJOPaaxmsAs=
 		</data>
 		<key>Frameworks/CredoAppCalendarEvents.framework/Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Frameworks/CredoAppCalendarEvents.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Px6VkCZHUA+StFhtO3mGkUWy0mQ=
+		ZJAThtMKD2KNYeoGcA6gGjSt7pE=
 		</data>
 		<key>Frameworks/CredoAppCalendarReminders.framework/CredoAppCalendarReminders</key>
 		<data>
-		r/qAN0Sl+RpTv8vUph0yA74sq5Q=
+		L4NCOw4BLXWfCTDdmRWQ7kWq69A=
 		</data>
 		<key>Frameworks/CredoAppCalendarReminders.framework/Info.plist</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Frameworks/CredoAppCalendarReminders.framework/_CodeSignature/CodeResources</key>
 		<data>
-		m4sf4iFhpLoFXXuo/+edAxqCyhg=
+		zuBM/C4dMkm/S+WlMWq/j/cX/lI=
 		</data>
 		<key>Frameworks/CredoAppContacts.framework/CredoAppContacts</key>
 		<data>
-		j4WsN2PLDjHIsx4+gG9668aFk9Y=
+		89IAHmSGv0II12p9VtGS3ZCJrlY=
 		</data>
 		<key>Frameworks/CredoAppContacts.framework/Info.plist</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Frameworks/CredoAppContacts.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Qy4mr3u93cctyS7E0ilreCWD4zM=
+		TZC8i4+zgT9ckDnccY9vBZZe6n8=
 		</data>
 		<key>Frameworks/CredoAppCore.framework/CredoAppCore</key>
 		<data>
-		1fYkqTSxjAnKgvNC37H86kvFLas=
+		7F4bNkXYNDKkOmAIMFnzmwda/9I=
 		</data>
 		<key>Frameworks/CredoAppCore.framework/Info.plist</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Frameworks/CredoAppCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		GSc1JKnfjLUSoZy2VK3Zjd0Ir9I=
+		IsPiC+l7JmnW61UTnfa6VNUi9aE=
 		</data>
 		<key>Frameworks/CredoAppMedia.framework/CredoAppMedia</key>
 		<data>
-		+omF14VzhTUJBulF8p7XAV6Icz4=
+		/Fcdvipq+gHETEpMKRwsfDfHOsQ=
 		</data>
 		<key>Frameworks/CredoAppMedia.framework/Info.plist</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Frameworks/CredoAppMedia.framework/_CodeSignature/CodeResources</key>
 		<data>
-		epR1ectbNhg43yCuxef8xv0IIzs=
+		dclhKcWU6eY+fQUI3ag3/9NXxAw=
 		</data>
 		<key>Frameworks/CredoAppMusic.framework/CredoAppMusic</key>
 		<data>
-		28QIw6NK+NNtOOMRNHLGWM0LnZ8=
+		XenLmJlHgEWXZoymH+OkgObBUBo=
 		</data>
 		<key>Frameworks/CredoAppMusic.framework/Info.plist</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Frameworks/CredoAppMusic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		LcawerwhOrhA6VOse1umwb1zPjg=
+		Zb8k8rlg8C11VMopEP/NfQDlrZM=
 		</data>
 		<key>Headers/SCSSDKiOS-Swift.h</key>
 		<data>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HQsb3o73WiymqSjeTrvccnVorG1DvI+mih5xDXPJ9OQ=
+			6tpW52oFjOCOth3xGVlsrM1ksSLOQanpO0pK9SAC/nk=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppCalendarEvents.framework/Info.plist</key>
@@ -161,14 +161,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3XAev5n1fXdBSuUAo3mna38ViNhFDrVH6xke0VQFUa8=
+			ZsycqXnwXk8rxct875OF7psPHoSE4ktJc1UWagRwRkY=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppCalendarReminders.framework/CredoAppCalendarReminders</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vt8gTK1VRV5PU98Lq/hf8J0HrfdsKAm5gkTsd4mDnRg=
+			BlM824blCBicFZ8a6tjSFH+fvGPoNnqXyfPp8eYGmOs=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppCalendarReminders.framework/Info.plist</key>
@@ -182,14 +182,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ksMK2Kpg06Rnb4fkUKWHzBXR1NDQzbv+UaE6GwZt2Z4=
+			ifQO9Owppe81J0ZYjOtNP8m4QQHEuOJHLi51ZHlMzYc=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppContacts.framework/CredoAppContacts</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ww391m4UmZK5wZF7uyJSndsY3oXk1dHxMXVS5Iii+lU=
+			DPE+Hh85VoqT70ApdilIuTG0EHk78Pub1Qh1o8cypD4=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppContacts.framework/Info.plist</key>
@@ -203,14 +203,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KVne1b+nVxluj4S0WzBgxMZ+Qliu7esmu5srfONDxq4=
+			3KQpyX6Enjp00HpiXqH0uBGw5d+Irx12bhRxdrQX/EE=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppCore.framework/CredoAppCore</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DnMzNOFOozA+VlppPi5GgZXn2GIGPQ9OJDTh7XFn3rY=
+			6ZGe7lsiYN6GLENyTa2cyFdOEsP67dhVfehtkmtZg6s=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppCore.framework/Info.plist</key>
@@ -224,14 +224,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g2VBYn3UZyZQ3PGFjrn0RtudD8HICexUwCXKnnczygU=
+			TmHcq2GHLsoGuAhvYIAMAJf4A8cptKwXStCccKxqC3I=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppMedia.framework/CredoAppMedia</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tnkYVFlzkzvc6j+MOpVN1exKVbxjkEZXZTV4vnvePyA=
+			n6OXIpxotvRt0C+NUd0T5B+BSHW1QZvhtHbTeLtEw9s=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppMedia.framework/Info.plist</key>
@@ -245,14 +245,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FZTFzQPnesa2nFd0x6qPh1ig6XHG2UhsXSfAx1cO+c0=
+			4zDTNoAz/z78dN7xpmeLWBl9xXb6P+5BzQNRLoIJNXY=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppMusic.framework/CredoAppMusic</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k2R6K3iJ4gw7wcmnOSzutt37i2iEQoQgGmEUm/12wxI=
+			wSeSkS0iBegyyvlmPEZxbsbnKyI+a594Sgrwuf76ha4=
 			</data>
 		</dict>
 		<key>Frameworks/CredoAppMusic.framework/Info.plist</key>
@@ -266,7 +266,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2eC1HpF7Zcmy1qcgkHVhFeKsutx88dqN+O7T+kW5z0g=
+			ofyMA+7+AI1Fnty3H3BEIhgGPsVhQVLBHOi1EZtTVjI=
 			</data>
 		</dict>
 		<key>Headers/SCSSDKiOS-Swift.h</key>
