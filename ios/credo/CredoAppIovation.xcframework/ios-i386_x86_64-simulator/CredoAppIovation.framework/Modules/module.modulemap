@@ -1,4 +1,0 @@
-framework module CredoAppIovation {
-  header "CredoAppIovation-Swift.h"
-  requires objc
-}
