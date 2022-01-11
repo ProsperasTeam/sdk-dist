@@ -1,0 +1,117 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CredoAppCore
+import AVFoundation
+import Compression
+import CoreLocation
+import CoreTelephony
+@_exported import CredoAppCore
+import Foundation
+import Swift
+import UIKit
+extension Data {
+  public func compress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public func decompress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public enum CompressionAlgorithm {
+    case zlib
+    case lzfse
+    case lzma
+    case lz4
+    public static func == (a: Foundation.Data.CompressionAlgorithm, b: Foundation.Data.CompressionAlgorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func deflate() -> Foundation.Data?
+  public func inflate() -> Foundation.Data?
+  public func zip() -> Foundation.Data?
+  public func unzip(skipCheckSumValidation: Swift.Bool = true) -> Foundation.Data?
+  public func gzip() -> Foundation.Data?
+  public func gunzip() -> Foundation.Data?
+  public func adler32() -> CredoAppCore.Adler32
+  public func crc32() -> CredoAppCore.Crc32
+}
+public struct Crc32 : Swift.CustomStringConvertible {
+  public init()
+  public var checksum: Swift.UInt32
+  public mutating func advance(withChunk chunk: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+}
+public struct Adler32 : Swift.CustomStringConvertible {
+  public init()
+  public var checksum: Swift.UInt32
+  public mutating func advance(withChunk chunk: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+}
+final public class ModuleActor {
+  public typealias Extractor = () -> CredoAppCore.AreaObject
+  public typealias PermissionsReader = () -> ([Swift.String : Swift.Bool])
+  public typealias PermissionsRequester = () -> ()
+  final public var extractors: [Swift.String : CredoAppCore.ModuleActor.Extractor]
+  final public var permissionsReader: CredoAppCore.ModuleActor.PermissionsReader
+  final public var permissionsRequester: CredoAppCore.ModuleActor.PermissionsRequester
+  public init(exctractors extractorsDict: [Swift.String : CredoAppCore.ModuleActor.Extractor], permissionsReader reader: @escaping CredoAppCore.ModuleActor.PermissionsReader, permissionsRequester requester: @escaping CredoAppCore.ModuleActor.PermissionsRequester)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class ModuleContext {
+  final public var actor: CredoAppCore.ModuleActor?
+  @objc deinit
+}
+public struct ModuleVersionInfo {
+  public init(version aVersion: Swift.String, versionCode code: Swift.String)
+}
+public protocol Module {
+  var versionInfo: CredoAppCore.ModuleVersionInfo { get }
+  func attachTo(context: CredoAppCore.ModuleContext, arguments: [Swift.String : Any])
+}
+public protocol AreaObject {
+  func getContent() -> Any
+  func getDescription() -> Any
+}
+public enum CredoAppResult<T> {
+  case success(T)
+  case error(Swift.Int, Swift.String)
+}
+public protocol LocationRotating {
+  func rotateLocation(latitudeOrigin: Swift.Double?, longitudeOrigin: Swift.Double?) -> (latitude: Swift.Double?, longitude: Swift.Double?)
+}
+public struct FlatAreaDescription {
+  public init(mappings values: [Swift.Int])
+  public func serializableReprezentation() -> Any
+  public var mappings: [Swift.Int]
+}
+public class SubArea {
+  public init()
+  public func addValue(_ value: Any?)
+  public func addSubArea(_ value: CredoAppCore.SubArea)
+  public func addError(errorMessage: Swift.String)
+  public func addAccessDeniedError(errorMessage: Swift.String)
+  public func getContent() -> Any
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Area : CredoAppCore.SubArea, CredoAppCore.AreaObject {
+  public static func areaWith(areaDescription description: Any) -> CredoAppCore.Area
+  public static func failedAreaWith(extractError: Swift.String, areaDescription description: Any) -> CredoAppCore.AreaObject
+  public static func failedAreaWith(accessError: Swift.String, areaDescription description: Any) -> CredoAppCore.AreaObject
+  public func getDescription() -> Any
+  override public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class CredoAppService {
+  final public func execute(referenceNumber: Swift.String) -> CredoAppCore.CredoAppResult<Swift.Void>
+  @_hasMissingDesignatedInitializers public class Builder {
+    public init(url anURL: Swift.String, authKey key: Swift.String)
+    public func addModule(_ module: CredoAppCore.Module) -> CredoAppCore.CredoAppService.Builder
+    public func setForceResolvePermissions(_ force: Swift.Bool) -> CredoAppCore.CredoAppService.Builder
+    public func build() -> CredoAppCore.CredoAppService
+    @objc deinit
+  }
+  @objc deinit
+}
+extension Foundation.Data.CompressionAlgorithm : Swift.Equatable {}
+extension Foundation.Data.CompressionAlgorithm : Swift.Hashable {}

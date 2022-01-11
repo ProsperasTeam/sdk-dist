@@ -1,0 +1,4 @@
+framework module CredoAppContacts {
+  header "CredoAppContacts-Swift.h"
+  requires objc
+}

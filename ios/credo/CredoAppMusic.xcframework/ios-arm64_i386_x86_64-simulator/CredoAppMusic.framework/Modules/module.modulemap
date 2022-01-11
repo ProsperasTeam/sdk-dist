@@ -1,0 +1,4 @@
+framework module CredoAppMusic {
+  header "CredoAppMusic-Swift.h"
+  requires objc
+}
