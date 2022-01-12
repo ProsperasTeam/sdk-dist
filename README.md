@@ -11,7 +11,7 @@ The score-only integration allows the SDK to collect metadata from the host mobi
 The Full Integration opens access to the full suite of features available on the SCS Platform.  Full Integration requires that each consumer be registered as a User using the RegisterUser function.  After registration, each User can log in with their email address and password.  If login is successful, the SDK will receive a token that will automatically be sent with all subsequent calls.  
 After being logged in, a list of previously saved saved consents – if any -- can be retrieved for that User. The SDK can also save new consents for each User that each represent a date and time a particular type of consent was granted or denied.  
 To collect the User’s data for assessment by the SCS platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
-# Requirements
+# Requirements - Android
 The SCS SDK requires the following Android permissions:
 -	android.permission.INTERNET
 -	android.permission.READ_EXTERNAL_STORAGE
@@ -22,6 +22,16 @@ The SCS SDK requires the following Android permissions:
 -	android.permission.ACCESS_WIFI_STATE
 -	android.permission.USE_FINGERPRINT
 -	android.permission.QUERY_ALL_PACKAGES
+
+# Requirements - iOS
+The SCS SDK requires that you add the following permissions and descriptions to your Info.plist:
+- NSContactsUsageDescription = "$(PRODUCT_NAME) uses contacts access as part of its metadata analysis."
+- NSCalendarsUsageDescription = "$(PRODUCT_NAME) uses calendar access as part of its metadata analysis."
+- NSRemindersUsageDescription = "$(PRODUCT_NAME) uses calendar reminders access as part of its metadata analysis."
+- NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) uses photo library access as part of its metadata analysis."
+- NSAppleMusicUsageDescription = "$(PRODUCT_NAME) uses apple music access as part of its metadata analysis."
+
+
 # Include the Library
 
 ## React Native
@@ -59,6 +69,14 @@ int declinethreshold = scoreObject.declinethreshold;
 int scorevalue = scoreObject.scorevalue;
 int uid = scoreObject.userid;
 ```
+
+## iOS
+1. Drag the SCSSDKiOS.xcframework folder from Finder where you downloaded it to the Frameworks folder in your XCode project.
+2. Add `import SCSSDKiOS` at the top of the .swift file where you will be calling the SCS SDK.
+3. Where you want to initiate metdata analysis, call one of the following functions depending on your needs:
+   a. `let sdk = await SCSSDKiOS.scoreRefOnly(scsapikey: "", scsurl: "")`
+   b. `let sdk = await SCSSDKiOS.score(scsapikey: "", scsurl: "")`
+4. Set the scsapikey to the SCS API Key that was provided to you by your SCS contact.  Leave the SCS URL empty unless your SCS contact provides a different URL.
 
 ## SCSSDK
 Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
