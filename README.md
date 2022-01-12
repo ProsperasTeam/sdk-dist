@@ -99,7 +99,7 @@ The Score function is used to collect alternative data from a consumer’s mobil
 
 ### Returns:
 Score JSON including the following fields:
--	ReferenceID (integer):  The unique reference ID for this scoring collection.
+-	ReferenceID (number):  The unique reference ID for this scoring collection.
 -	Score (integer):  Relative risk score for the metadata collected on the particular device.  E.g., 602.
 -	Probability (decimal):  Decimal representing the relative probability that this user will default.  Expressed with 4 decimal places.  For example, 0.0532 reflects a relative 5.32% chance that the consumer will default.
 # Full Integration 
