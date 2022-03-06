@@ -1,4 +1,0 @@
-framework module CredoAppCalendarReminders {
-  header "CredoAppCalendarReminders-Swift.h"
-  requires objc
-}
