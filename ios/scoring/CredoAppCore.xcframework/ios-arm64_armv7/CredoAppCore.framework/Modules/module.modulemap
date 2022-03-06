@@ -1,0 +1,11 @@
+framework module CredoAppCore {
+  umbrella header "CredoAppCore.h"
+
+  export *
+  module * { export * }
+}
+
+module CredoAppCore.Swift {
+    header "CredoAppCore-Swift.h"
+    requires objc
+}

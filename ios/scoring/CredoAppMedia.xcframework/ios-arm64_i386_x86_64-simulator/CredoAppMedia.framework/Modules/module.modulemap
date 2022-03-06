@@ -1,0 +1,4 @@
+framework module CredoAppMedia {
+  header "CredoAppMedia-Swift.h"
+  requires objc
+}

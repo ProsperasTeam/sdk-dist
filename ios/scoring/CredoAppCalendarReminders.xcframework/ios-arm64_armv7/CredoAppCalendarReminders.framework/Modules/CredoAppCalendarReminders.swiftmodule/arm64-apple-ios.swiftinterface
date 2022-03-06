@@ -1,0 +1,16 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CredoAppCalendarReminders
+import CredoAppCore
+import EventKit
+import Foundation
+import Swift
+import UIKit
+final public class CalendarRemindersModule : CredoAppCore.Module {
+  final public var versionInfo: CredoAppCore.ModuleVersionInfo {
+    get
+  }
+  public init()
+  final public func attachTo(context: CredoAppCore.ModuleContext, arguments: [Swift.String : Any])
+  @objc deinit
+}

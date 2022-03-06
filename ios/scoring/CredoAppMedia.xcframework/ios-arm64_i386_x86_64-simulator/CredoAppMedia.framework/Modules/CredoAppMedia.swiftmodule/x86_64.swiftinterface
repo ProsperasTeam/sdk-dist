@@ -1,0 +1,19 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target x86_64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CredoAppMedia
+import CredoAppCore
+import Foundation
+import Photos
+import Swift
+import UIKit
+final public class MediaModule : CredoAppCore.Module {
+  final public var name: Swift.String {
+    get
+  }
+  final public var versionInfo: CredoAppCore.ModuleVersionInfo {
+    get
+  }
+  public init()
+  final public func attachTo(context: CredoAppCore.ModuleContext, arguments: [Swift.String : Any])
+  @objc deinit
+}

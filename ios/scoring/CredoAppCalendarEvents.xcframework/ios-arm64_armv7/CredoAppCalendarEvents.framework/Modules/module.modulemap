@@ -1,0 +1,4 @@
+framework module CredoAppCalendarEvents {
+  header "CredoAppCalendarEvents-Swift.h"
+  requires objc
+}
