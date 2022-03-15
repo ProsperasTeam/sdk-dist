@@ -1,7 +1,8 @@
 
  
 # Introduction
-The following document provides general documentation applicable across all programming languages for which the SCS SDK may be used.  
+The following document provides general documentation applicable across all programming languages for which the SCS SDK may be used.
+
 # Application flow
 SCS offers two application flows, depending on the integration choice.  The first is score only and requires the least integration points.  The second is full integration, which allows access to all of the features available on the SCS platform.  
 In either flow, the SDK must first be initialized by passing certain parameters, including the organization’s authorization key and optionally, the phone number associated with the device.  The authorization key is obtained through SCS and authorizes the organization’s use of the SDK.  If the mobile app collects the user’s mobile phone number and it is provided to the SCS SDK, it can be used to identify the collected data and score and to assist in fraud prevention.  If the mobile phone number is unavailable, pass an empty string.
