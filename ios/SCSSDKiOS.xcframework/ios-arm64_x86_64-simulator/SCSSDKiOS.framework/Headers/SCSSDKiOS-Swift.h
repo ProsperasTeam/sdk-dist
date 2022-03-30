@@ -213,6 +213,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC9SCSSDKiOS9SCSSDKiOS")
 @interface SCSSDKiOS : NSObject
 - (void)scoreRefOnlyWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
+- (void)scoreWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl email:(NSString * _Nonnull)email offerCode:(NSString * _Nonnull)offerCode mobilenumber:(NSString * _Nonnull)mobilenumber completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 - (void)scoreWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -437,6 +438,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC9SCSSDKiOS9SCSSDKiOS")
 @interface SCSSDKiOS : NSObject
 - (void)scoreRefOnlyWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
+- (void)scoreWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl email:(NSString * _Nonnull)email offerCode:(NSString * _Nonnull)offerCode mobilenumber:(NSString * _Nonnull)mobilenumber completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 - (void)scoreWithScsapikey:(NSString * _Nonnull)scsapikey scsurl:(NSString * _Nonnull)scsurl completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
