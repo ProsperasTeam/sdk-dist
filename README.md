@@ -1,19 +1,19 @@
 
  
 # Introduction
-The following document provides general documentation applicable across all programming languages for which the SCS SDK may be used.
+The following document provides general documentation applicable across all programming languages for which the Prosperas SDK may be used.
 
 # Application flow
-SCS offers two application flows, depending on the integration choice.  The first is score only and requires the least integration points.  The second is full integration, which allows access to all of the features available on the SCS platform.  
-In either flow, the SDK must first be initialized by passing certain parameters, including the organization’s authorization key and optionally, the phone number associated with the device.  The authorization key is obtained through SCS and authorizes the organization’s use of the SDK.  If the mobile app collects the user’s mobile phone number and it is provided to the SCS SDK, it can be used to identify the collected data and score and to assist in fraud prevention.  If the mobile phone number is unavailable, pass an empty string.
+Prosperas offers two application flows, depending on the integration choice.  The first is score only and requires the least integration points.  The second is full integration, which allows access to all of the features available on the Prosperas platform.  
+In either flow, the SDK must first be initialized by passing certain parameters, including the organization’s authorization key and optionally, the phone number associated with the device.  The authorization key is obtained through Prosperas and authorizes the organization’s use of the SDK.  If the mobile app collects the user’s mobile phone number and it is provided to the Prosperas SDK, it can be used to identify the collected data and score and to assist in fraud prevention.  If the mobile phone number is unavailable, pass an empty string.
 # Score Only
-The score-only integration allows the SDK to collect metadata from the host mobile phone and return a score using SCS’s proprietary technology.  Implementation requires only a call to the Score function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
+The score-only integration allows the SDK to collect metadata from the host mobile phone and return a score using Prosperas’s proprietary technology.  Implementation requires only a call to the Score function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the Prosperas platform, and return a score and probability of default.
 # Full Integration
-The Full Integration opens access to the full suite of features available on the SCS Platform.  Full Integration requires that each consumer be registered as a User using the RegisterUser function.  After registration, each User can log in with their email address and password.  If login is successful, the SDK will receive a token that will automatically be sent with all subsequent calls.  
+The Full Integration opens access to the full suite of features available on the Prosperas Platform.  Full Integration requires that each consumer be registered as a User using the RegisterUser function.  After registration, each User can log in with their email address and password.  If login is successful, the SDK will receive a token that will automatically be sent with all subsequent calls.  
 After being logged in, a list of previously saved saved consents – if any -- can be retrieved for that User. The SDK can also save new consents for each User that each represent a date and time a particular type of consent was granted or denied.  
-To collect the User’s data for assessment by the SCS platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the SCS platform, and return a score and probability of default.
+To collect the User’s data for assessment by the Prosperas platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the Prosperas platform, and return a score and probability of default.
 # Requirements - Android
-The SCS SDK requires the following Android permissions:
+The Prosperas SDK requires the following Android permissions:
 -	android.permission.INTERNET
 -	android.permission.READ_EXTERNAL_STORAGE
 -	android.permission.READ_CONTACTS
@@ -25,7 +25,7 @@ The SCS SDK requires the following Android permissions:
 -	android.permission.QUERY_ALL_PACKAGES
 
 # Requirements - iOS
-The SCS SDK requires that you add the following permissions and descriptions to your Info.plist:
+The Prosperas SDK requires that you add the following permissions and descriptions to your Info.plist:
 - NSContactsUsageDescription = "$(PRODUCT_NAME) uses contacts access as part of its metadata analysis."
 - NSCalendarsUsageDescription = "$(PRODUCT_NAME) uses calendar access as part of its metadata analysis."
 - NSRemindersUsageDescription = "$(PRODUCT_NAME) uses calendar reminders access as part of its metadata analysis."
@@ -36,7 +36,7 @@ The SCS SDK requires that you add the following permissions and descriptions to 
 # Include the Library
 
 ## React Native
-Copy the latest scssdk.aar and scorelib.aar into the following directory, where "react-native-module-name" is the name of your module:  
+Copy the latest Prosperassdk.aar and scorelib.aar into the following directory, where "react-native-module-name" is the name of your module:  
 ```
 react-native-module-name/android/libs
 ```
@@ -49,19 +49,19 @@ dependencies {
 
 ## Xamarin
 1. Add a new Java Bindings Library project to your existing project or create a new one.
-2. Add the latest scssdk.aar and scorelib.aar into the Jars folder in your new project.
+2. Add the latest Prosperassdk.aar and scorelib.aar into the Jars folder in your new project.
 3. View the properties for each .aar file and set the Build Action to LibraryProjectZip
 4. Build the Java Bindings Library
 5. Add a reference to your Java Bindings Library from your existing App project using the "Add Reference" context menu.
-6. Add an import statement at the top of the code in your App where you want to invoke the SCS SDK: `using Com.Scs.Scssdk;`
+6. Add an import statement at the top of the code in your App where you want to invoke the Prosperas SDK: `using Com.Prosperas.Prosperassdk;`
 7. Add the following code setting the variables to your values:
 
 ```
-//set the authKey to the authorization key provided by SCS.  scsApiURL can be left as an empty string, ""
-SCSSDK scssdk = new SCSSDK(authKey, scsApiURL);
+//set the authKey to the authorization key provided by Prosperas.  ProsperasApiURL can be left as an empty string, ""
+ProsperasSDK Prosperassdk = new ProsperasSDK(authKey, ProsperasApiURL);
 //pass the application context, useremail, offercode, phonenumber, and minimum collect flag.
 //phonenumber can be passed as an empty string.  The minimum collect flag should be set to false.
-Object scoreRes = scssdk.Score(this, userEmail, offerCode, phonenumber, false);
+Object scoreRes = Prosperassdk.Score(this, userEmail, offerCode, phonenumber, false);
 dynamic scoreObject = JsonConvert.DeserializeObject(scoreRes.ToString());
 //access the score results through the scoreObject
 referenceNumber = scoreObject.reference;
@@ -72,23 +72,23 @@ int uid = scoreObject.userid;
 ```
 
 ## iOS
-1. Drag the SCSSDKiOS.xcframework folder from Finder where you downloaded it to the Frameworks folder in your XCode project.
-2. Add `import SCSSDKiOS` at the top of the .swift file where you will be calling the SCS SDK.
+1. Drag the ProsperasSDKiOS.xcframework folder from Finder where you downloaded it to the Frameworks folder in your XCode project.
+2. Add `import ProsperasSDKiOS` at the top of the .swift file where you will be calling the Prosperas SDK.
 3. Where you want to initiate metdata analysis, call one of the following functions depending on your needs:
-   a. `let sdk = await SCSSDKiOS.scoreRefOnly(scsapikey: "", scsurl: "")`
-   b. `let sdk = await SCSSDKiOS.score(scsapikey: "", scsurl: "")`
-4. Set the scsapikey to the SCS API Key that was provided to you by your SCS contact.  Leave the SCS URL empty unless your SCS contact provides a different URL.
+   a. `let sdk = await ProsperasSDKiOS.scoreRefOnly(Prosperasapikey: "", Prosperasurl: "")`
+   b. `let sdk = await ProsperasSDKiOS.score(Prosperasapikey: "", Prosperasurl: "")`
+4. Set the Prosperasapikey to the Prosperas API Key that was provided to you by your Prosperas contact.  Leave the Prosperas URL empty unless your Prosperas contact provides a different URL.
 
-## SCSSDK
-Initializes the SCSSDK with base parameters for the mobile app using the SDK and the particular mobile device.
+## ProsperasSDK
+Initializes the ProsperasSDK with base parameters for the mobile app using the SDK and the particular mobile device.
 ### Parameters:
--	Authorization Key: Unique key provided to your organization to allow you to access the SCS Platform.
--	API URL:  Optional URL string specifying the location of the SCS API.
+-	Authorization Key: Unique key provided to your organization to allow you to access the Prosperas Platform.
+-	API URL:  Optional URL string specifying the location of the Prosperas API.
 ### Returns:
--	Initialized SCSSDK object.
+-	Initialized ProsperasSDK object.
 # Metadata Scoring Integration
 ## Score
-The Score function is used to collect alternative data from a consumer’s mobile device and retrieve a credit risk score based on that metadata.  The Score function verifies that the user has provided the necessary consent to the required permissions.  These permissions include permission (1) to read contacts, (2) to read calendar, and (3) to read photos and media.  If the correct permissions have not been granted, the score function will terminate.  The Score function then collects the necessary metadata, interacts with the SCS platform, and returns a score and probability of default.
+The Score function is used to collect alternative data from a consumer’s mobile device and retrieve a credit risk score based on that metadata.  The Score function verifies that the user has provided the necessary consent to the required permissions.  These permissions include permission (1) to read contacts, (2) to read calendar, and (3) to read photos and media.  If the correct permissions have not been granted, the score function will terminate.  The Score function then collects the necessary metadata, interacts with the Prosperas platform, and returns a score and probability of default.
 ### Parameters:
 -	Application Context: The current mobile application’s context to enable permission checks and metadata gathering.
 -	At least one of the following unique identifiers -- Email is preferred:
