@@ -9,6 +9,14 @@
   <groupId>com.prosperas.creditosdk</groupId>
   <artifactId>marketplace</artifactId>
   <version>creditosdk-local-release</version>
+  <repositories>
+        <repository>
+            <id>android-studio</id>
+            <name>lixo</name>
+            <url>https://maven.google.com</url>
+            <!-- <url>file://C:\Program Files\Android\Android Studio\gradle\m2repository</url> -->
+        </repository>
+    </repositories>
   <dependencies>
     <dependency>
       <groupId>androidx.databinding</groupId>
