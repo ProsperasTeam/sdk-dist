@@ -54,16 +54,6 @@
       <version>unspecified</version>
     </dependency>
     <dependency>
-      <groupId>androidx.test.ext</groupId>
-      <artifactId>junit-ktx</artifactId>
-      <version>1.1.5</version>
-    </dependency>
-    <dependency>
-      <groupId>androidx.test</groupId>
-      <artifactId>runner</artifactId>
-      <version>1.5.2</version>
-    </dependency>
-    <dependency>
       <groupId>androidx.navigation</groupId>
       <artifactId>navigation-fragment-ktx</artifactId>
       <version>2.5.3</version>
