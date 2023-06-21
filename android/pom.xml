@@ -46,7 +46,7 @@
     <dependency>
       <groupId>androidx.navigation</groupId>
       <artifactId>navigation-ui-ktx</artifactId>
-      <version>2.6.0</version>
+      <version>2.5.3</version>
     </dependency>
     <dependency>
       <groupId>CreditoSegundosSDK.sdk</groupId>
