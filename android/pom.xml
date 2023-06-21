@@ -9,7 +9,6 @@
   <groupId>com.prosperas.creditosdk</groupId>
   <artifactId>marketplace</artifactId>
   <version>creditosdk-local-release</version>
-  <packaging>aar</packaging>
   <dependencies>
     <dependency>
       <groupId>androidx.databinding</groupId>
