@@ -15,8 +15,9 @@ The Prosperas SDK requires the following Android permissions:
 
 # Project Setup - Android
 Clone project using git.
-Copy sdk-dist/android/MarketplaceSDK folder to your root project directory (Image of File Explorer)
-![Alt text](image.png)
+Copy sdk-dist/android/MarketplaceSDK folder to your root project directory
+![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/c808ca6c-3840-446f-8c9f-79a055720446)
+
 open top-level settings.gradle
 add include ':MarketplaceSDK' to bottom of file
 add implementation project(path: ':MarketplaceSDK') to app-level build.gradle
