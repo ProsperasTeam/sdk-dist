@@ -33,6 +33,31 @@ Add `import com.prosperas.marketplace.CreditoSDK` to app-level MainActivity.kt, 
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/aac0bb0e-df50-4bbe-bc0c-c35484811ea5)
 
+Call the SDK as illustrated by the following block of code in MainActivity.kt
+
+`
+package com.prosperas.myapplication
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import com.prosperas.marketplace.CreditoSDK
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        var new_locale = "es-rMX" //findViewById<EditText>(R.id.newLocale).text.toString()
+        var new_sessionId = "d/fvIRn....SFf2gQs"
+        var new_apikey = "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" //findViewById<EditText>(R.id.newSessionId).text.toString()
+
+        CreditoSDK.init(applicationContext)
+
+        CreditoSDK.startCredit(this,
+            new_sessionId,
+            new_apikey,
+            new_locale)
+    }
+}
+`
 
 # Requirements - iOS
 The Prosperas SDK requires that you add the following permissions and descriptions to your Info.plist:
