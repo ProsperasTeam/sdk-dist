@@ -3,10 +3,7 @@ The following document provides general documentation applicable across all prog
 
 # Application flow
 Prosperas offers two application flows, depending on the integration choice, iOS and Android
-# Full Integration
-The Full Integration opens access to the full suite of features available on the Prosperas Platform.  Full Integration requires that each consumer be registered as a User using the RegisterUser function.  After registration, each User can log in with their email address and password.  If login is successful, the SDK will receive a token that will automatically be sent with all subsequent calls.  
-After being logged in, a list of previously saved saved consents – if any -- can be retrieved for that User. The SDK can also save new consents for each User that each represent a date and time a particular type of consent was granted or denied.  
-To collect the User’s data for assessment by the Prosperas platform, call the Score function, passing it the UserID received from the Login function.  The Score function will verify that the user has provided the necessary consent to the required permissions.  Score will then collect the necessary metadata, interact with the Prosperas platform, and return a score and probability of default.
+
 # Requirements - Android
 The Prosperas SDK requires the following Android permissions:
 -	android.permission.INTERNET
@@ -15,13 +12,20 @@ The Prosperas SDK requires the following Android permissions:
 
 # Project Setup - Android
 Clone project using git.
+`git clone https://github.com/ProsperasTeam/sdk-dist.git`
+
 Copy sdk-dist/android/MarketplaceSDK folder to your root project directory
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/c808ca6c-3840-446f-8c9f-79a055720446)
 
-open top-level settings.gradle
-add include ':MarketplaceSDK' to bottom of file
-add implementation project(path: ':MarketplaceSDK') to app-level build.gradle
-add import com.prosperas.marketplace.CreditoSDK to app-level MainActivity.kt, or wherever you wish to call it
+Open top-level settings.gradle add include `:MarketplaceSDK` to bottom of file
+![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/78c1b909-02d8-49b2-aa50-bb18d260e826)
+
+Add `implementation project(path: ':MarketplaceSDK')` to app-level build.gradle, in the "dependencies" section
+![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/9746a125-f150-4bec-83eb-94c4e8cffdeb)
+
+Add `import com.prosperas.marketplace.CreditoSDK` to app-level MainActivity.kt, or wherever you wish to instantiate the library
+![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/aac0bb0e-df50-4bbe-bc0c-c35484811ea5)
+
 
 # Requirements - iOS
 The Prosperas SDK requires that you add the following permissions and descriptions to your Info.plist:
@@ -29,8 +33,6 @@ The Prosperas SDK requires that you add the following permissions and descriptio
 
 
 # Include the Library
-
-
 
 
 ## iOS
