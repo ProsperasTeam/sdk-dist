@@ -12,6 +12,7 @@ The Prosperas SDK requires the following Android permissions:
 
 # Project Setup - Android
 Clone project using git.
+
 `git clone https://github.com/ProsperasTeam/sdk-dist.git`
 
 Copy sdk-dist/android/MarketplaceSDK folder to your root project directory
