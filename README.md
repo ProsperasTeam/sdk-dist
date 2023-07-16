@@ -19,6 +19,8 @@ Copy sdk-dist/android/MarketplaceSDK folder to your root project directory
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/c808ca6c-3840-446f-8c9f-79a055720446)
 
+![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/991172ce-75c0-4e2b-8d94-61cca1ee9a00)
+
 Open top-level settings.gradle add include `:MarketplaceSDK` to bottom of file
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/78c1b909-02d8-49b2-aa50-bb18d260e826)
