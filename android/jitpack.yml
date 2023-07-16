@@ -1,3 +1,0 @@
-install: 
-FILE="-Dfile=creditoSDK-1.0.0.aar" 
-mvn install:install-file $FILE -DgroupId=com.prosperas.creditosdk -DartifactId=marketplace -Dversion=1.0 -Dpackaging=aar -DpomFile=pom.xml
