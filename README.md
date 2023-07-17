@@ -57,27 +57,3 @@ Call the SDK as illustrated by the following block of code in MainActivity.kt
                 new_locale)
         }
     }
-
-# Requirements - iOS
-The Prosperas SDK requires that you add the following permissions and descriptions to your Info.plist:
-- NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) uses photo library access as part of its metadata analysis."
-
-
-# Include the Library
-
-
-## iOS
-1. Drag the ProsperasSDKiOS.xcframework folder from Finder where you downloaded it to the Frameworks folder in your XCode project.
-2. Add `import ProsperasSDKiOS` at the top of the .swift file where you will be calling the Prosperas SDK.
-3. Where you want to initiate metdata analysis, call one of the following functions depending on your needs:
-   a. `let sdk = await ProsperasSDKiOS.scoreRefOnly(Prosperasapikey: "", Prosperasurl: "")`
-   b. `let sdk = await ProsperasSDKiOS.score(Prosperasapikey: "", Prosperasurl: "")`
-4. Set the Prosperasapikey to the Prosperas API Key that was provided to you by your Prosperas contact.  Leave the Prosperas URL empty unless your Prosperas contact provides a different URL.
-
-## ProsperasSDK
-Initializes the ProsperasSDK with base parameters for the mobile app using the SDK and the particular mobile device.
-### Parameters:
--	Authorization Key: Unique key provided to your organization to allow you to access the Prosperas Platform.
--	API URL:  Optional URL string specifying the location of the Prosperas API.
-### Returns:
--	Initialized ProsperasSDK object.

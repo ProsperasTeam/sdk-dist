@@ -1,4 +1,0 @@
-framework module SCSSDKiOS {
-  header "SCSSDKiOS-Swift.h"
-  requires objc
-}
