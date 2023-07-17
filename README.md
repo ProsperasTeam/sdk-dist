@@ -1,9 +1,6 @@
 # Introduction
 The following document provides general documentation applicable across all programming languages for which the Prosperas SDK may be used.
 
-# Application flow
-Prosperas offers two application flows, depending on the integration choice, iOS and Android
-
 # Requirements - Android
 The Prosperas SDK requires the following Android permissions:
 -	android.permission.INTERNET
