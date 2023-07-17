@@ -54,3 +54,6 @@ Call the SDK as illustrated by the following block of code in MainActivity.kt
                 new_locale)
         }
     }
+
+# Example Application
+An example application and reference implementation is available at: https://github.com/ProsperasTeam/WebViewAndroidBootstrapp
