@@ -45,13 +45,15 @@ Call the SDK as illustrated by the following block of code in MainActivity.kt
             var new_locale = "es-rMX"
             var new_sessionId = "d/fvIRn....SFf2gQs"
             var new_apikey = "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" 
+            var new_url = "https://creditos-web.prosperas.com"
 
             CreditoSDK.init(applicationContext)
 
             CreditoSDK.startCredit(this,
                 new_sessionId,
                 new_apikey,
-                new_locale)
+                new_locale,
+                new_url)
         }
     }
 
