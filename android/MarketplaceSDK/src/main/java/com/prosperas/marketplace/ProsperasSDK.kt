@@ -17,6 +17,7 @@ class ProsperasSDK : Activity() {
     var locale = ""
     var sessionId = ""
     var newApiKey = ""
+    var url = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,16 +27,22 @@ class ProsperasSDK : Activity() {
         locale = intent.extras?.getString("locale").toString()
         newApiKey = intent.extras?.getString("apiKey2").toString()
         sessionId = intent.extras?.getString("sessionId").toString()
-        var url = "https://creditos-web.prosperas.com?sessionid=$sessionId&apikey=$newApiKey&locale=$locale"
+        url = intent.extras?.getString("url").toString()+
+                "?sessionid=$sessionId&apikey=$newApiKey&locale=$locale"
         GenerateWebView(url)
 
         val btnRegresar = view.findViewById<Button>(R.id.botonRegresar)
+        val btnExit = view.findViewById<Button>(R.id.botonSalida)
         if(locale == "en-rUS"){
             btnRegresar.text = "Back"
+            btnExit.text = "Exit"
         }
 
         btnRegresar.setOnClickListener{
             GenerateWebView(url)
+        }
+        btnExit.setOnClickListener{
+            finish()
         }
     }
 
@@ -81,8 +88,6 @@ class ProsperasSDK : Activity() {
                 if (request.url.toString().contains(home.host!!)) {
                     vw.loadUrl(request.url.toString())
                 } else {
-                    //val intent = Intent(Intent.ACTION_VIEW, request.url)
-                    //vw.context.startActivity(intent)
                     vw.loadUrl(request.url.toString())
                 }
                 return true

@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context="com.prosperas.marketplace.ProsperasSDK">
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="70dp">
     <Button
         android:id="@+id/botonRegresar"
         android:layout_width="wrap_content"
@@ -14,6 +19,17 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         />
+
+    <Button
+        android:id="@+id/botonSalida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salida"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>
 
     <WebView
         android:layout_width="match_parent"

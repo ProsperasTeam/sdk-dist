@@ -5,10 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 
-//import com.prosperas. .creditosdk.activity.MainActivityCredo
-//import com.prosperas.marketplace.SharedPrefs
-
-
 open class CreditoSDK {
     companion object{
 
@@ -19,7 +15,7 @@ open class CreditoSDK {
 
         }
 
-        public fun startCredit(activity: Activity,sessionId: String, apiKey: String, locale : String){
+        public fun startCredit(activity: Activity,sessionId: String, apiKey: String, locale : String, url: String){
             if(apiKey.isNullOrBlank()){
                 Toast.makeText(context, "ERROR: No APIKEY proporcionada", Toast.LENGTH_LONG).show()
             }
@@ -36,6 +32,7 @@ open class CreditoSDK {
                 intent.putExtra("sessionId", sessionId)
                 intent.putExtra("apiKey2", apiKey)
                 intent.putExtra("locale", locale_2)
+                intent.putExtra("url", url)
                 sharedpre = SharedPrefs(context)
                 sharedpre.setPrefString("X-Api-Key",apiKey)
                 activity.startActivityForResult(
