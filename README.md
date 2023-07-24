@@ -30,7 +30,12 @@ Add `import com.prosperas.marketplace.CreditoSDK` to app-level MainActivity.kt, 
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/aac0bb0e-df50-4bbe-bc0c-c35484811ea5)
 
-Call the SDK as illustrated by the following block of code in MainActivity.kt
+Call the SDK as illustrated by the following block of code in MainActivity.kt, StartCredit takes up to five variables:
+* Locale - Localization string such as en-rUS
+* SessionID - SessionID for your user
+* API Key - API key issues to you by Prosperas
+* URL - URL of the Progressive Web App Instance given to you by Prosperas
+* Native Button Color - Hex code for the coloring of native text buttons. There are two buttons; one which controls returning to your app and one for returning to the beginning of the survey flow. Their color is configurable through this argument
 
 
     package com.prosperas.myapplication
@@ -46,14 +51,15 @@ Call the SDK as illustrated by the following block of code in MainActivity.kt
             var new_sessionId = "d/fvIRn....SFf2gQs"
             var new_apikey = "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" 
             var new_url = "https://creditos-web.prosperas.com"
-
+            var new_color = "#00FF00"
             CreditoSDK.init(applicationContext)
 
             CreditoSDK.startCredit(this,
                 new_sessionId,
                 new_apikey,
                 new_locale,
-                new_url)
+                new_url,
+                new_color)
         }
     }
 
