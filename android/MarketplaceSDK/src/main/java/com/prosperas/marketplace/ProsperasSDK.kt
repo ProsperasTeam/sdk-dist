@@ -3,12 +3,15 @@ package com.prosperas.marketplace
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.*
 import android.widget.Button
+import androidx.annotation.RequiresApi
 import com.prosperas.marketplace.databinding.ActivitySdkBinding
 
 class ProsperasSDK : Activity() {
@@ -18,7 +21,20 @@ class ProsperasSDK : Activity() {
     var sessionId = ""
     var newApiKey = ""
     var url = ""
+    var colorNumber: Int = 0
 
+    private fun setNativeColor()
+    {
+        var colorString = intent.extras?.getString("nativeButtons").toString()
+        try {
+            colorNumber = Color.parseColor(colorString)
+        }
+        catch (e: IllegalArgumentException)
+        {
+            colorNumber = Color.RED
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySdkBinding.inflate(layoutInflater)
@@ -29,10 +45,14 @@ class ProsperasSDK : Activity() {
         sessionId = intent.extras?.getString("sessionId").toString()
         url = intent.extras?.getString("url").toString()+
                 "?sessionid=$sessionId&apikey=$newApiKey&locale=$locale"
+
         GenerateWebView(url)
 
         val btnRegresar = view.findViewById<Button>(R.id.botonRegresar)
         val btnExit = view.findViewById<Button>(R.id.botonSalida)
+        setNativeColor()
+        btnExit.setTextColor(colorNumber)
+        btnRegresar.setTextColor(colorNumber)
         if(locale == "en-rUS"){
             btnRegresar.text = "Back"
             btnExit.text = "Exit"
@@ -42,6 +62,9 @@ class ProsperasSDK : Activity() {
             GenerateWebView(url)
         }
         btnExit.setOnClickListener{
+            val returnIntent = Intent()
+            returnIntent.putExtra("result", "Cancelado por el usuario")
+            this.finishActivity(RESULT_CANCELED)
             finish()
         }
     }

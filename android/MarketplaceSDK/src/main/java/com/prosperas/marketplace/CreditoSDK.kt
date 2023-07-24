@@ -15,7 +15,7 @@ open class CreditoSDK {
 
         }
 
-        public fun startCredit(activity: Activity,sessionId: String, apiKey: String, locale : String, url: String){
+        public fun startCredit(activity: Activity,sessionId: String, apiKey: String, locale : String, url: String, nativeButtons: String){
             if(apiKey.isNullOrBlank()){
                 Toast.makeText(context, "ERROR: No APIKEY proporcionada", Toast.LENGTH_LONG).show()
             }
@@ -33,6 +33,7 @@ open class CreditoSDK {
                 intent.putExtra("apiKey2", apiKey)
                 intent.putExtra("locale", locale_2)
                 intent.putExtra("url", url)
+                intent.putExtra("nativeButtons", nativeButtons)
                 sharedpre = SharedPrefs(context)
                 sharedpre.setPrefString("X-Api-Key",apiKey)
                 activity.startActivityForResult(
