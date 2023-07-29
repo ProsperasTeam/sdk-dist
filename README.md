@@ -18,7 +18,7 @@ Copy sdk-dist/android/MarketplaceSDK folder to your root project directory
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/991172ce-75c0-4e2b-8d94-61cca1ee9a00)
 
-Open top-level settings.gradle add include `:MarketplaceSDK` to bottom of file
+Open top-level settings.gradle add `include ':MarketplaceSDK'` to bottom of file
 
 ![image](https://github.com/ProsperasTeam/sdk-dist/assets/125609244/78c1b909-02d8-49b2-aa50-bb18d260e826)
 
@@ -38,30 +38,30 @@ Call the SDK as illustrated by the following block of code in MainActivity.kt, S
 * Native Button Color - Hex code for the coloring of native text buttons. There are two buttons; one which controls returning to your app and one for returning to the beginning of the survey flow. Their color is configurable through this argument
 
 
-    package com.prosperas.myapplication
+        package com.prosperas.myapplication
     
-    import android.os.Bundle
-    import androidx.activity.ComponentActivity
-    import com.prosperas.marketplace.CreditoSDK
+        import android.os.Bundle
+        import androidx.activity.ComponentActivity
+        import com.prosperas.marketplace.CreditoSDK
     
-    class MainActivity : ComponentActivity() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            var new_locale = "es-rMX"
-            var new_sessionId = "d/fvIRn....SFf2gQs"
-            var new_apikey = "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" 
-            var new_url = "https://creditos-web.prosperas.com"
-            var new_color = "#00FF00"
-            CreditoSDK.init(applicationContext)
+        class MainActivity : ComponentActivity() {
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                var new_locale = "es-rMX"
+                var new_sessionId = "d/fvIRn....SFf2gQs"
+                var new_apikey = "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" 
+                var new_url = "https://creditos-web.prosperas.com"
+                var new_color = "#00FF00"
+                CreditoSDK.init(applicationContext)
 
-            CreditoSDK.startCredit(this,
-                new_sessionId,
-                new_apikey,
-                new_locale,
-                new_url,
-                new_color)
+                CreditoSDK.startCredit(this,
+                    new_sessionId,
+                    new_apikey,
+                    new_locale,
+                    new_url,
+                    new_color)
+            }
         }
-    }
 
 # Example Application
 An example application and reference implementation is available at: https://github.com/ProsperasTeam/WebViewAndroidBootstrapp
