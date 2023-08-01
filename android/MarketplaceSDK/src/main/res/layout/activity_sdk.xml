@@ -11,14 +11,12 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:background="@android:color/white"
-        android:layout_height="40dp">
+        android:layout_height="30dp">
     <Button
         android:id="@+id/botonRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Regresar"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
         android:background="@android:color/white"
         />
 
@@ -26,8 +24,7 @@
         android:id="@+id/botonSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salida"
-        android:layout_marginTop="8dp"
+        android:text="Salir"
         android:layout_marginStart="8dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/white"

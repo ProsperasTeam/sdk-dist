@@ -65,7 +65,7 @@ class ProsperasSDK : Activity() {
             val returnIntent = Intent()
             returnIntent.putExtra("result", "Cancelado por el usuario")
             this.finishActivity(RESULT_CANCELED)
-            finish()
+            this.finish()
         }
     }
 
