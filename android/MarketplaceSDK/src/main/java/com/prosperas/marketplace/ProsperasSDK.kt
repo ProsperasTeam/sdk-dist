@@ -1,8 +1,10 @@
 package com.prosperas.marketplace
 
+import android.Manifest
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -12,7 +14,11 @@ import android.view.View
 import android.webkit.*
 import android.widget.Button
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.prosperas.marketplace.databinding.ActivitySdkBinding
+
+private const val CAMERA_PERMISSION_REQUEST_CODE = 100
 
 class ProsperasSDK : Activity() {
     private var fileChooserCallback: ValueCallback<Array<Uri>>? = null
@@ -66,6 +72,37 @@ class ProsperasSDK : Activity() {
             returnIntent.putExtra("result", "Cancelado por el usuario")
             this.finishActivity(RESULT_CANCELED)
             this.finish()
+        }
+
+        // Check camera permission
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Request camera permission
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_REQUEST_CODE
+            )
+        } else {
+            // Camera permission already granted, you can proceed with camera-related tasks
+            // ...
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Camera permission granted, you can proceed with camera-related tasks
+                // ...
+            } else {
+                // Camera permission denied, handle the scenario where the user denied the permission
+                // ...
+            }
         }
     }
 
