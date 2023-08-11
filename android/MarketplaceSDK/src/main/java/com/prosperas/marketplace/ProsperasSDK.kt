@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 import com.prosperas.marketplace.databinding.ActivitySdkBinding
 
 private const val CAMERA_PERMISSION_REQUEST_CODE = 100
+private const val LOCATION_PERMISSION_REQUEST_CODE = 101
 
 class ProsperasSDK : Activity() {
     private var fileChooserCallback: ValueCallback<Array<Uri>>? = null
@@ -88,6 +89,21 @@ class ProsperasSDK : Activity() {
             // Camera permission already granted, you can proceed with camera-related tasks
             // ...
         }
+
+        // Check location permission
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Request location permission
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE
+            )
+        } else {
+            // Location permission already granted, you can proceed with location-related tasks
+            // ...
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -101,6 +117,16 @@ class ProsperasSDK : Activity() {
                 // ...
             } else {
                 // Camera permission denied, handle the scenario where the user denied the permission
+                // ...
+            }
+        }
+
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Location permission granted, you can proceed with location-related tasks
+                // ...
+            } else {
+                // Location permission denied, handle the scenario where the user denied the permission
                 // ...
             }
         }
@@ -173,6 +199,14 @@ class ProsperasSDK : Activity() {
                 chooserIntent.putExtra(Intent.EXTRA_INTENT, selectionIntent)
                 startActivityForResult(chooserIntent, 0)
                 return true
+            }
+
+            override fun onGeolocationPermissionsShowPrompt(
+                origin: String?,
+                callback: GeolocationPermissions.Callback?
+            ) {
+                // Grant geolocation permission
+                callback?.invoke(origin, true, false)
             }
         }
         view.setOnKeyListener { v: View, keyCode: Int, event: KeyEvent ->
