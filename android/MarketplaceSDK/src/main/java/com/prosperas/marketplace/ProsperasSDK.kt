@@ -75,7 +75,7 @@ class ProsperasSDK : Activity() {
             this.finish()
         }
 
-        // Check camera permission
+        /*// Check camera permission
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
             != PackageManager.PERMISSION_GRANTED
         ) {
@@ -103,7 +103,7 @@ class ProsperasSDK : Activity() {
         } else {
             // Location permission already granted, you can proceed with location-related tasks
             // ...
-        }
+        }*/
     }
 
     override fun onRequestPermissionsResult(
