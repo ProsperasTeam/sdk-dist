@@ -60,9 +60,14 @@ class ProsperasSDK : Activity() {
         setNativeColor()
         btnExit.setTextColor(colorNumber)
         btnRegresar.setTextColor(colorNumber)
-        if(locale == "en-rUS"){
+        
+        if(locale.startsWith("en")){
             btnRegresar.text = "Back"
             btnExit.text = "Exit"
+        }
+        else{
+            btnRegresar.text = "Regresar"
+            btnExit.text = "Salir"
         }
 
         btnRegresar.setOnClickListener{
